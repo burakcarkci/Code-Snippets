@@ -12,9 +12,9 @@ namespace Exercises
 
             string reversedString = "";
 
-            for (int word = myString.Length - 1; word >= 0; word--)
+            for (int word = inputString.Length - 1; word >= 0; word--)
             {
-                reversedString += myString[word] + " ";
+                reversedString += inputString[word] + " ";
             }
             Console.WriteLine(reversedString);
         }
