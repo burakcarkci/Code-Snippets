@@ -27,6 +27,11 @@ namespace Exercises
 
             int len = arr3.Length;
 
+			//Find the value at position (length / 2)
+			//Find the value at postion (length + 1) / 2
+			//Then sum up and divide by 2 (sum / 2)
+			//return
+			
             if (len % 2 == 0)
             {
                 int val1 = arr3[len / 2];
