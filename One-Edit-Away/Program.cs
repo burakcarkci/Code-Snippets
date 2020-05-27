@@ -32,7 +32,7 @@ namespace Exercises
             {
                 if (str1[i] != str2[i])
                 {
-                    if (foundDifference == true)
+                    if (foundDifference)
                     {
                         return false;
                     }
