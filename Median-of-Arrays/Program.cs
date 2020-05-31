@@ -24,13 +24,16 @@ namespace Exercises
             }
 
             int[] arr3 = newList.ToArray();
+			
+			Array.Sort(nums3);
 
             int len = arr3.Length;
 
-			//Find the value at position (length / 2)
-			//Find the value at postion (length + 1) / 2
-			//Then sum up and divide by 2 (sum / 2)
-			//return
+			//Find the value at position array[length / 2]
+			//Find the value at postion array[length / 2 - 1]
+			//Then sum up and divide by 2 (double)sum / 2
+			//return 
+			//Else return array[length / 2]
 			
             if (len % 2 == 0)
             {
@@ -44,9 +47,17 @@ namespace Exercises
             }
             else
             {
-                int odd = arr3[len / 2];
+				//Edge case if there is only 1 element in the array
+                if (nums3.Length == 1)
+                {
+					Console.WriteLine(nums3[0]);
+                }
+                else
+                {
+                    int odd = nums3[len / 2];
 
-                Console.WriteLine(odd);
+					Console.WriteLine(odd);
+                }
             }
         }
     }
