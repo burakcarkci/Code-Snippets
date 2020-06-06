@@ -1,51 +1,36 @@
-﻿using System;
-
-// Rotate an array of n elements to the left by k steps.
-// Input: [1, 2, 3, 4, 5, 6, 7]
-// Output: [4, 5, 6, 7, 1, 2, 3]
-
-namespace Exercises
+﻿
+public class RotateArray
 {
-    public class RotateArray
+    public void Rotate(int[] array, int k)
     {
-        public void LeftRotate(int[] array, int n, int k)
-        {
-            for (int i = 1; i < k; i++)
-            {
-                LeftRotateByOne(array, n);
-            }
-        }
+        k = k % array.Length;
 
-        public void LeftRotateByOne(int[] array, int n)
-        {
-            int index;
-            int tempArray = array[0];
+        int len = array.Length;
 
-            for (index = 0; index < n - 1; index++)
-            {
-                array[index] = array[index + 1];
-            }
-            array[index] = tempArray;
-        }
+        Reverse(array, 0, len - 1);
+        Reverse(array, 0, k - 1);
+        Reverse(array, k, len - 1);
+    }
 
-        public void PrintArray(int[] array, int n)
+    public void Reverse(int[] array, int start, int end)
+    {
+        while (start < end)
         {
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
         }
     }
 
-    internal class Program
+    public void Print(int[] array, int k)
     {
-        private static void Main(string[] args)
+        int len = array.Length;
+
+        for (int i = 0; i < len; i++)
         {
-            RotateArray rotateArray = new RotateArray();
-            int[] array = { 1, 2, 3, 4, 5, 6, 7 };
-            rotateArray.LeftRotate(array, 7, 3);
-            rotateArray.LeftRotateByOne(array, 7);
-            rotateArray.PrintArray(array, 7);
+            Console.Write(array[i] + ",");
         }
     }
 }
